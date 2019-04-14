@@ -17,7 +17,7 @@ $ docker run \
     -v $XAUTHORITY:$XAUTHORITY \
     -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
     -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
-    -e DISPLAY=:0 \
+    -e DISPLAY=$DISPLAY \
     -e XAUTHORITY=$XAUTHORITY \
     --device /dev/dri \
     docker-battlenet

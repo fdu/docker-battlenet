@@ -7,18 +7,25 @@ Build
 -----
 `$ docker build . -t docker-battlenet`
 
-Run
+Use
 ---
+
+Create once with:
+
 ```
-$ docker run \
-    -d \
+$ docker create \
     --name battlenet \
     -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-    -v $XAUTHORITY:$XAUTHORITY \
     -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
     -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
     -e DISPLAY=$DISPLAY \
-    -e XAUTHORITY=$XAUTHORITY \
     --device /dev/dri \
+    -v /share:/share \
     docker-battlenet
+```
+
+Then run it each time with:
+
+```
+$ docker start battlenet
 ```

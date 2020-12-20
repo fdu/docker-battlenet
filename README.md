@@ -7,8 +7,8 @@ Build
 -----
 `$ docker build . -t docker-battlenet`
 
-Use
----
+Use on a local machine
+----------------------
 
 Create once with:
 

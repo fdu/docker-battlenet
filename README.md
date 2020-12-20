@@ -29,3 +29,8 @@ Then run it each time with:
 ```
 $ docker start battlenet
 ```
+
+Use on a remote VM through VNC with mediated GPU passthrough
+------------------------------------------------------------
+
+Follow the instructions to setup [mediated GPU passthrough (GVT-g)](https://github.com/intel/gvt-linux/wiki/GVTg_Setup_Guide) the pass those extra arguments to Docker create : `-e MESA_LOADER_DRIVER_OVERRIDE=i965 --privileged --ipc=host`.

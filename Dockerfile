@@ -17,7 +17,6 @@ RUN apt-key add /tmp/winehq.key
 RUN dpkg --add-architecture i386
 RUN add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' 
 RUN apt update
-RUN apt install -y libgcc-s1:i386
 RUN apt install -y --install-recommends winehq-staging winetricks zenity
 
 # Pre-install Mono, see versions at https://wiki.winehq.org/Mono
